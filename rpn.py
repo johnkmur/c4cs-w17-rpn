@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 
 import operator
+import readline
+from colored import fg, bg, attr
+from termcolor import colored
+
+# class bcolors:
+#     HEADER = '\033[95m'
+#     OKBLUE = '\033[94m'
+#     OKGREEN = '\033[92m'
+#     WARNING = '\033[93m'
+#     FAIL = '\033[91m'
+#     ENDC = '\033[0m'
+#     BOLD = '\033[1m'
+#     UNDERLINE = '\033[4m'
 
 OPERATORS = {
 	'+': operator.add,
@@ -28,7 +41,16 @@ def calculate(arg):
 def main():
 	while True:
 		result = calculate(input('rpn calc> '))
-		print("Result:", result)
+		if (result < 0):
+			#print('%s Result (is negative): %s' % (fg(1), attr(0)))
+			print(colored("Result (is negative): ", 'red'), colored(result, 'red'))
+		elif (result == 0):
+			print('%s Result: %s' % (fg(3), attr(0)))
+		else:
+			print('%s Result (is positive): %s' % (fg(2), attr(0)))
+		# print ("Result: ", result)
+		# print ('%s Hello World !!! %s' % (fg(1), attr(0)))
+		#print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
 
 if __name__ == '__main__':
 	main()
