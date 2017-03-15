@@ -43,11 +43,11 @@ def main():
 		result = calculate(input('rpn calc> '))
 		if (result < 0):
 			#print('%s Result (is negative): %s' % (fg(1), attr(0)))
-			print(colored("Result (is negative): ", 'red'), colored(result, 'red'))
+			print(colored("Result (is negative):", 'red'), colored(result, 'red'))
 		elif (result == 0):
-			print('%s Result: %s' % (fg(3), attr(0)))
+			print(colored("Result:", 'yellow'), colored(result, 'yellow'))
 		else:
-			print('%s Result (is positive): %s' % (fg(2), attr(0)))
+			print(colored("Result (is positive):", 'green'), colored(result, 'green'))
 		# print ("Result: ", result)
 		# print ('%s Hello World !!! %s' % (fg(1), attr(0)))
 		#print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
