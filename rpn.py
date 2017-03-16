@@ -20,9 +20,7 @@ def calculate(arg):
 		try:
 			operand = float(operand)
 			stack.append(operand)
-		# except (RuntimeError, TypeError, NameError, ValueError):
-		# 	print("Error, restarting program")
-		# 	os.execv(sys.executable, ['python'] + sys.argv)
+
 		except RuntimeError:
 			print("RuntimeError, restarting program")
 			os.execv(sys.executable, ['python'] + sys.argv)
@@ -35,12 +33,8 @@ def calculate(arg):
 			print("NameError, restarting program")
 			os.execv(sys.executable, ['python'] + sys.argv)
 
-		except ValueError:
-			print("ValueError, restarting program")
-			os.execv(sys.executable, ['python'] + sys.argv)
-
 		except IndexError:
-			print("ValueError, restarting program")
+			print("IndexError, restarting program")
 			os.execv(sys.executable, ['python'] + sys.argv)
 
 		except:
@@ -51,13 +45,8 @@ def calculate(arg):
 				
 				stack.append(result)
 
-	try:
-		top = stack.pop()
-	except IndexError:
-		print("IndexError, restarting program")
-		os.execv(sys.executable, ['python'] + sys.argv)
-	except:
-		return top
+	return stack.pop()
+
 
 def main():
 	while True:
