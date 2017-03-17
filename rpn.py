@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Jack Murphy
 import operator
 import readline
 from termcolor import colored
