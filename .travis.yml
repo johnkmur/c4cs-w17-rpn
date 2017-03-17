@@ -7,5 +7,5 @@ install:
   - pip install coveralls
 script: 
   - coverage run -m unittest
-after success:
+after_success:
   - coveralls
