@@ -2,6 +2,10 @@ language: python
 python:
   - "3.6"
 # command to run tests
+install:
+  - pip install termcolor
+  - pip install coveralls
 script: 
-- pip install termcolor
-- python3 -m unittest
+  - coverage run -m unittest
+after success:
+  - coveralls
