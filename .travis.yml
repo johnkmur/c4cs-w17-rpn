@@ -8,4 +8,4 @@ install:
 script: 
   - coverage run -m unittest
 after_success:
-  - COVERALLS_REPO_TOKEN=zm8Bi2PgyrTmardGCYbmmRDBCFpgPz8ee coveralls
+  - coveralls
